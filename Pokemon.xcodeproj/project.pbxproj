@@ -16,6 +16,7 @@
 		43EF30F52B6C4FA6002414FC /* PokemonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF30F42B6C4FA6002414FC /* PokemonTests.swift */; };
 		43EF30FF2B6C4FA6002414FC /* PokemonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF30FE2B6C4FA6002414FC /* PokemonUITests.swift */; };
 		43EF31012B6C4FA6002414FC /* PokemonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF31002B6C4FA6002414FC /* PokemonUITestsLaunchTests.swift */; };
+		43EF310F2B6C5018002414FC /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 43EF310E2B6C5018002414FC /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EF310F2B6C5018002414FC /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = Pokemon;
+			packageProductDependencies = (
+				43EF310E2B6C5018002414FC /* Swinject */,
+			);
 			productName = Pokemon;
 			productReference = 43EF30DA2B6C4FA5002414FC /* Pokemon.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 43EF30D12B6C4FA5002414FC;
+			packageReferences = (
+				43EF310D2B6C5017002414FC /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 43EF30DB2B6C4FA5002414FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -607,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43EF310D2B6C5017002414FC /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43EF310E2B6C5018002414FC /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43EF310D2B6C5017002414FC /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43EF30D22B6C4FA5002414FC /* Project object */;
 }
