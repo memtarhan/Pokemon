@@ -70,6 +70,8 @@ private extension SceneDelegate {
 
     /// - Initializing UI w/ initial view controller
     func initUI() {
-        rootViewController = ScreenAssembler.shared.assembler?.resolver.resolve(HomeViewController.self)
+        // TODO: Check if screen exists (get rid of forced unwrap)
+        let initialScreen = ScreenAssembler.shared.assembler?.resolver.resolve(HomeViewController.self)!
+        rootViewController = UINavigationController(rootViewController: initialScreen!)
     }
 }
