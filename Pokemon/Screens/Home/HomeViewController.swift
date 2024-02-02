@@ -141,9 +141,6 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UISearchControllerDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.cancelSearch()
-//        self.searchText = ""
-//        isFiltered = false
-//        self.tableView.reloadData()
     }
 }
 

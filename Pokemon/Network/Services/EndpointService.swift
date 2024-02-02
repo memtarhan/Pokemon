@@ -19,6 +19,12 @@ struct EndpointService {
             URL(string: "\(baseURL)/pokemon-species/\(id)")
         }
     }
+    
+    struct FavoritePokemon {
+        static func favorite() -> URL? {
+            URL(string: "https://api.eu.svix.com/api/v1/app/71ks/msg/")
+        }
+    }
 }
 
 fileprivate let baseURL = "https://pokeapi.co/api/v2"

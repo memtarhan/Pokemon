@@ -20,7 +20,8 @@ class HomeAssembly: Assembly {
         }
 
         container.register(HomeViewModel.self) { resolver in
-            HomeViewModelImplemented(repository: resolver.resolve(PokemonRepository.self)!)
+            HomeViewModelImplemented(repository: resolver.resolve(PokemonRepository.self)!,
+                                     favoriteRepository: resolver.resolve(FavoritePokemonRepository.self)!)
         }
     }
 }

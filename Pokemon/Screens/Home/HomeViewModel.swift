@@ -54,9 +54,11 @@ class HomeViewModelImplemented: HomeViewModel {
     private var currentId = 1
 
     private let repository: PokemonRepository
+    private let favoriteRepository: FavoritePokemonRepository
 
-    init(repository: PokemonRepository) {
+    init(repository: PokemonRepository, favoriteRepository: FavoritePokemonRepository) {
         self.repository = repository
+        self.favoriteRepository = favoriteRepository
         snapshotModel.appendSections(PokemonListSection.allCases)
     }
 
@@ -78,11 +80,11 @@ class HomeViewModelImplemented: HomeViewModel {
     }
 
     func willDisplayItem(atIndexPath indexPath: IndexPath) {
-        if indexPath.row == snapshotModel.itemIdentifiers(inSection: .main).count - 1 {
-            // Load more
-            currentId += 1
-            load()
-        }
+//        if indexPath.row == snapshotModel.itemIdentifiers(inSection: .main).count - 1 {
+//            // Load more
+//            currentId += 1
+//            load()
+//        }
     }
 
     func didSelectItem(atIndexPath indexPath: IndexPath) {
@@ -90,7 +92,11 @@ class HomeViewModelImplemented: HomeViewModel {
             return
         }
 
-        navigateToDetails.send(pokemon.id)
+//        navigateToDetails.send(pokemon.id)
+
+        Task {
+            try? await favoriteRepository.favorite(pokemonWithId: pokemon.id)
+        }
     }
 
     func cancelSearch() {
