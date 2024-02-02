@@ -12,12 +12,17 @@ struct PokemonDetailsView: View {
     var pokemon: PokemonDetailsModel
 
     var body: some View {
-        VStack {
-            KFImage(pokemon.frontImageURL)
-                .resizable()
-                .frame(width: 128, height: 128)
-            Text(pokemon.name)
+        List {
+            ForEach(pokemon.entries, id: \.self) { entry in
+                HStack {
+                    KFImage(pokemon.frontImageURL)
+                        .resizable()
+                        .frame(width: 45, height: 45)
+                    Text(entry)
+                }
+            }
         }
+        .listStyle(.plain)
     }
 }
 

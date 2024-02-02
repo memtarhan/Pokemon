@@ -21,6 +21,7 @@ class ScreenAssembler {
             PokemonDetailsAssembly(),
 
             /// - Repositories
+            PokemonDetailsRepositoryAssembly(),
             PokemonRepositoryAssembly(),
 
         ])

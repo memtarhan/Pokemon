@@ -15,12 +15,13 @@ class PokemonDetailsAssembly: Assembly {
             let viewModel = resolver.resolve(PokemonDetailsViewModel.self)!
 
             view.viewModel = viewModel
-            
-            return view 
+
+            return view
         }
-        
+
         container.register(PokemonDetailsViewModel.self) { resolver in
-            PokemonDetailsViewModelImplemented(repository: resolver.resolve(PokemonRepository.self)!)
+            PokemonDetailsViewModelImplemented(repository: resolver.resolve(PokemonRepository.self)!,
+                                               detailsRepository: resolver.resolve(PokemonDetailsRepository.self)!)
         }
     }
 }

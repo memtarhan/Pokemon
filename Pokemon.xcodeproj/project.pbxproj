@@ -26,6 +26,7 @@
 		43D051DD2B6D4E90008E4E18 /* PokemonDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051DC2B6D4E90008E4E18 /* PokemonDetailsRepository.swift */; };
 		43D051DF2B6D4EF2008E4E18 /* PokemonDetailsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051DE2B6D4EF2008E4E18 /* PokemonDetailsRepositoryTests.swift */; };
 		43D051E12B6D4F29008E4E18 /* StubPokemonDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051E02B6D4F29008E4E18 /* StubPokemonDetailsRepository.swift */; };
+		43D051E32B6D501F008E4E18 /* PokemonDetailsRepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051E22B6D501F008E4E18 /* PokemonDetailsRepositoryAssembly.swift */; };
 		43EF30DE2B6C4FA5002414FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF30DD2B6C4FA5002414FC /* AppDelegate.swift */; };
 		43EF30E02B6C4FA5002414FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EF30DF2B6C4FA5002414FC /* SceneDelegate.swift */; };
 		43EF30E72B6C4FA6002414FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EF30E62B6C4FA6002414FC /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		43D051DC2B6D4E90008E4E18 /* PokemonDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsRepository.swift; sourceTree = "<group>"; };
 		43D051DE2B6D4EF2008E4E18 /* PokemonDetailsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsRepositoryTests.swift; sourceTree = "<group>"; };
 		43D051E02B6D4F29008E4E18 /* StubPokemonDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubPokemonDetailsRepository.swift; sourceTree = "<group>"; };
+		43D051E22B6D501F008E4E18 /* PokemonDetailsRepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsRepositoryAssembly.swift; sourceTree = "<group>"; };
 		43EF30DA2B6C4FA5002414FC /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EF30DD2B6C4FA5002414FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EF30DF2B6C4FA5002414FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				43D051BF2B6D079F008E4E18 /* PokemonRepositoryAssembly.swift */,
+				43D051E22B6D501F008E4E18 /* PokemonDetailsRepositoryAssembly.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -183,8 +186,8 @@
 		43D051CB2B6D27F9008E4E18 /* PokemonDetails */ = {
 			isa = PBXGroup;
 			children = (
-				43D051CC2B6D2818008E4E18 /* PokemonDetailsView.swift */,
 				43D051CE2B6D2826008E4E18 /* PokemonDetailsModel.swift */,
+				43D051CC2B6D2818008E4E18 /* PokemonDetailsView.swift */,
 				43D051D62B6D2EC8008E4E18 /* PokemonDetailsViewController.swift */,
 				43D051D72B6D2EC8008E4E18 /* PokemonDetailsViewController.xib */,
 				43D051DA2B6D4711008E4E18 /* PokemonDetailsViewModel.swift */,
@@ -310,8 +313,8 @@
 		43EF31302B6C59F8002414FC /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				43EF31312B6C5A08002414FC /* PokemonRepository.swift */,
 				43D051DC2B6D4E90008E4E18 /* PokemonDetailsRepository.swift */,
+				43EF31312B6C5A08002414FC /* PokemonRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				43EF312F2B6C59CD002414FC /* HTTPResponse.swift in Sources */,
 				43D051D82B6D2EC8008E4E18 /* PokemonDetailsViewController.swift in Sources */,
 				43D051CD2B6D2818008E4E18 /* PokemonDetailsView.swift in Sources */,
+				43D051E32B6D501F008E4E18 /* PokemonDetailsRepositoryAssembly.swift in Sources */,
 				43EF31282B6C58D3002414FC /* PrettyJSON.swift in Sources */,
 				43EF31342B6C5A47002414FC /* HTTPError.swift in Sources */,
 				43EF31252B6C5723002414FC /* Nibbable.swift in Sources */,

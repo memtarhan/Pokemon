@@ -24,9 +24,11 @@ class PokemonDetailsViewModelImplemented: PokemonDetailsViewModel {
     private let details = PassthroughSubject<PokemonDetailsModel, Never>()
 
     private let repository: PokemonRepository
+    private let detailsRepository: PokemonDetailsRepository
 
-    init(repository: PokemonRepository) {
+    init(repository: PokemonRepository, detailsRepository: PokemonDetailsRepository) {
         self.repository = repository
+        self.detailsRepository = detailsRepository
     }
 
     func load(pokemonId: Int) {
@@ -34,10 +36,14 @@ class PokemonDetailsViewModelImplemented: PokemonDetailsViewModel {
 
         Task {
             do {
-                let response = try await repository.getPokemon(withId: pokemonId)
-                let model = PokemonDetailsModel(name: response.name,
-                                                frontImageURL: URL(string: response.sprites.frontDefault)!,
-                                                backImageURL: URL(string: response.sprites.backDefault)!)
+                let pokemonResponse = try await repository.getPokemon(withId: pokemonId)
+                let detailsResponse = try await detailsRepository.getDetails(withId: pokemonId)
+
+                let entries = detailsResponse.flavorTextEntries.map { $0.flavorText }
+                let model = PokemonDetailsModel(name: pokemonResponse.name,
+                                                frontImageURL: URL(string: pokemonResponse.sprites.frontDefault)!,
+                                                backImageURL: URL(string: pokemonResponse.sprites.backDefault)!,
+                                                entries: entries)
                 details.send(model)
 
             } catch {
