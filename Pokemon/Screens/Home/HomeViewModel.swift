@@ -18,8 +18,20 @@ protocol HomeViewModel {
     /// Loads a Pokemon
     func load()
 
+    /// Informs about last displayed item in Pokemon list
+    /// - Parameter indexPath: Index path of last displayed item
     func willDisplayItem(atIndexPath indexPath: IndexPath)
+
+    /// Inform selection of an item
+    /// - Parameter indexPath: Index path of selected item
     func didSelectItem(atIndexPath indexPath: IndexPath)
+
+    /// Cancels search
+    func cancelSearch()
+
+    /// Informs with searched keyword
+    /// - Parameter keyword: Searched keyword
+    func search(keyword: String)
 }
 
 class HomeViewModelImplemented: HomeViewModel {
@@ -79,5 +91,17 @@ class HomeViewModelImplemented: HomeViewModel {
         }
 
         navigateToDetails.send(pokemon.id)
+    }
+
+    func cancelSearch() {
+        snapshot.send(snapshotModel)
+    }
+
+    func search(keyword: String) {
+        let filteredModels = (snapshotModel.itemIdentifiers(inSection: .main) as! [PokemonCollectionModel]).filter { $0.name.contains(keyword.lowercased()) }
+        var filteredSnapshot = pokemonListSnapshot()
+        filteredSnapshot.appendSections([.main])
+        filteredSnapshot.appendItems(filteredModels, toSection: .main)
+        snapshot.send(filteredSnapshot)
     }
 }

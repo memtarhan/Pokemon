@@ -57,8 +57,14 @@ private extension HomeViewController {
         collectionView.delegate = self
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.collectionViewLayout = createComponsitionalLayout()
-
+        collectionView.keyboardDismissMode = .onDrag
+        
         collectionView.register(UINib(nibName: "PokemonCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: PokemonCollectionViewCell.reuseIdentifier)
+
+        let search = UISearchController(searchResultsController: nil)
+        search.delegate = self
+        search.searchBar.delegate = self
+        navigationItem.searchController = search
     }
 
     func setupSubscribers() {
@@ -130,7 +136,29 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - UISearchControllerDelegate
+
+extension HomeViewController: UISearchControllerDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.cancelSearch()
+//        self.searchText = ""
+//        isFiltered = false
+//        self.tableView.reloadData()
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            viewModel.cancelSearch()
+            return
+        }
+        viewModel.search(keyword: searchText)
+    }
+}
+
 // MARK: - Router
 
 extension HomeViewController: Router { }
-
