@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         get { return window?.rootViewController }
         set {
             window?.rootViewController = newValue
-            window?.overrideUserInterfaceStyle = .light
             window?.makeKeyAndVisible()
         }
     }

@@ -18,7 +18,8 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
 
         containerView.layer.cornerRadius = 20.0
-        containerView.layer.shadowColor = UIColor.lightGray.cgColor
+        // TODO: Create an extention to UIColor for custom colors
+        containerView.layer.shadowColor = UIColor(named: "PokePrimaryShadowColor")?.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         containerView.layer.shadowRadius = 2.0
         containerView.layer.shadowOpacity = 0.7
