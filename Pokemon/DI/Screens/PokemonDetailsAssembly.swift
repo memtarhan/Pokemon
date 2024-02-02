@@ -10,8 +10,17 @@ import UIKit
 
 class PokemonDetailsAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(PokemonDetailsViewController.self) { _ in
-            PokemonDetailsViewController()
+        container.register(PokemonDetailsViewController.self) { resolver in
+            let view = PokemonDetailsViewController.instantiate()
+            let viewModel = resolver.resolve(PokemonDetailsViewModel.self)!
+
+            view.viewModel = viewModel
+            
+            return view 
+        }
+        
+        container.register(PokemonDetailsViewModel.self) { resolver in
+            PokemonDetailsViewModelImplemented(repository: resolver.resolve(PokemonRepository.self)!)
         }
     }
 }
