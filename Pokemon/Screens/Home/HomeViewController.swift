@@ -82,12 +82,12 @@ private extension HomeViewController {
 
 private extension HomeViewController {
     func createComponsitionalLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+        let layout = UICollectionViewCompositionalLayout { [unowned self] sectionIndex, environment in
             let section = self.sections[sectionIndex]
 
             switch section {
             case .main:
-                return self.mainSection
+                return self.layoutSection(forIndex: sectionIndex, environment: environment)
             }
         }
 
@@ -98,21 +98,23 @@ private extension HomeViewController {
         return layout
     }
 
-    var mainSection: NSCollectionLayoutSection {
-        let fraction: CGFloat = 1 / 3
+    private func layoutSection(forIndex index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        // approximate width we want to base our calculations on
+        let desiredWidth: CGFloat = 200
 
-        // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
+        let itemCount = environment.container.effectiveContentSize.width / desiredWidth
+
+        let fractionWidth: CGFloat = 1 / (itemCount.rounded())
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionWidth), heightDimension: .fractionalHeight(1.0))
+
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .small()
 
-        // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(fractionWidth))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
-        // Section
-        let section = NSCollectionLayoutSection(group: group)
-
-        return section
+        return NSCollectionLayoutSection(group: group)
     }
 }
 
@@ -131,3 +133,4 @@ extension HomeViewController: UICollectionViewDelegate {
 // MARK: - Router
 
 extension HomeViewController: Router { }
+
