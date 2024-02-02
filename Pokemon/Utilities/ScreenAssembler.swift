@@ -16,8 +16,11 @@ class ScreenAssembler {
     /// - Initializing dependency injection
     func initDI() {
         assembler = Assembler([
-            /// - Popups
+            /// - Screens
             HomeAssembly(),
+
+            /// - Repositories
+            PokemonRepositoryAssembly(),
 
         ])
         assembler?.apply(assembly: FactoryAssemby(assembler: assembler!))
