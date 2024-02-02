@@ -23,3 +23,15 @@ struct PokemonResponse: HTTPResponse {
     let name: String
     let sprites: PokemonSpritesResponse
 }
+
+// MARK: - FlavorTextEntryResponse
+
+struct FlavorTextEntryResponse: HTTPResponse {
+    let flavorText: String
+}
+
+// MARK: - PokemonDetailsResponse
+
+struct PokemonDetailsResponse: HTTPResponse {
+    let flavorTextEntries: [FlavorTextEntryResponse]
+}

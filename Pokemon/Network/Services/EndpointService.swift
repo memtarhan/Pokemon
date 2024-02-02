@@ -13,6 +13,12 @@ struct EndpointService {
             URL(string: "\(baseURL)/pokemon/\(id)")
         }
     }
+
+    struct PokemonDetails {
+        static func get(withId id: Int) -> URL? {
+            URL(string: "\(baseURL)/pokemon-species/\(id)")
+        }
+    }
 }
 
 fileprivate let baseURL = "https://pokeapi.co/api/v2"
