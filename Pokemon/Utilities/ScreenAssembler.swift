@@ -18,6 +18,7 @@ class ScreenAssembler {
         assembler = Assembler([
             /// - Screens
             HomeAssembly(),
+            PokemonDetailsAssembly(),
 
             /// - Repositories
             PokemonRepositoryAssembly(),

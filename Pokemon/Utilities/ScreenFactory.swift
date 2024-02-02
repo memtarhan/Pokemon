@@ -12,6 +12,7 @@ import Swinject
 
 protocol ScreenFactory: AnyObject {
     var home: HomeViewController { get }
+    var pokemonDetails: PokemonDetailsViewController { get }
 }
 
 class ScreenFactoryImplemented: ScreenFactory {
@@ -22,4 +23,5 @@ class ScreenFactoryImplemented: ScreenFactory {
     }
 
     var home: HomeViewController { assembler.resolver.resolve(HomeViewController.self)! }
+    var pokemonDetails: PokemonDetailsViewController { assembler.resolver.resolve(PokemonDetailsViewController.self)! }
 }

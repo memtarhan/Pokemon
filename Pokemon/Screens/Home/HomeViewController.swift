@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, Nibbable {
 private extension HomeViewController {
     func setupUI() {
         title = "Pokemon"
-        
+
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.contentInsetAdjustmentBehavior = .never
@@ -66,6 +66,13 @@ private extension HomeViewController {
             .receive(on: RunLoop.main)
             .sink { [weak self] snapshot in
                 self?.dataSource.apply(snapshot)
+            }
+            .store(in: &subscriptions)
+
+        viewModel.toDetailsPublisher
+            .receive(on: RunLoop.main)
+            .sink { [weak self] id in
+                self?.presentPokemonDetails(pokemonId: id)
             }
             .store(in: &subscriptions)
     }
@@ -104,7 +111,7 @@ private extension HomeViewController {
 
         // Section
         let section = NSCollectionLayoutSection(group: group)
-        
+
         return section
     }
 }
@@ -115,4 +122,12 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.willDisplayItem(atIndexPath: indexPath)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItem(atIndexPath: indexPath)
+    }
 }
+
+// MARK: - Router
+
+extension HomeViewController: Router { }
