@@ -35,3 +35,9 @@ struct FlavorTextEntryResponse: HTTPResponse {
 struct PokemonDetailsResponse: HTTPResponse {
     let flavorTextEntries: [FlavorTextEntryResponse]
 }
+
+// MARK: - FavoritePokemonResponse
+
+struct FavoritePokemonResponse: HTTPResponse {
+    let id: Int
+}

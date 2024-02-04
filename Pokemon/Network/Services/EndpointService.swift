@@ -22,7 +22,7 @@ struct EndpointService {
     
     struct FavoritePokemon {
         static func favorite() -> URL? {
-            URL(string: "https://api.eu.svix.com/api/v1/app/71ks/msg/")
+            URL(string: "https://api.eu.svix.com/api/v1/app/")
         }
     }
 }
