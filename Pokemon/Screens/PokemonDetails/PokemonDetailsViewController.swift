@@ -47,9 +47,9 @@ class PokemonDetailsViewController: UIViewController, Nibbable {
     }
 }
 
-// MARK: - Setup
+// MARK: - Viewable
 
-private extension PokemonDetailsViewController {
+extension PokemonDetailsViewController: Viewable {
     func setupUI() {
         view.backgroundColor = .pokePrimaryBackground
     }

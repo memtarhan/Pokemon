@@ -47,12 +47,12 @@ class HomeViewController: UIViewController, Nibbable {
     }
 }
 
-// MARK: - Setup
+// MARK: - Viewable
 
-private extension HomeViewController {
+extension HomeViewController: Viewable {
     func setupUI() {
         view.backgroundColor = .pokePrimaryBackground
-        
+
         navigationItem.title = "Pokemon"
 
         collectionView.dataSource = dataSource
@@ -60,7 +60,7 @@ private extension HomeViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.collectionViewLayout = createComponsitionalLayout()
         collectionView.keyboardDismissMode = .onDrag
-        
+
         collectionView.register(UINib(nibName: "PokemonCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: PokemonCollectionViewCell.reuseIdentifier)
 
         let search = UISearchController(searchResultsController: nil)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43AF1BE82B6FCA82008BF784 /* Listable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF1BE72B6FCA82008BF784 /* Listable.swift */; };
 		43AF1BEA2B6FCAD5008BF784 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF1BE92B6FCAD5008BF784 /* Searchable.swift */; };
+		43AF1BEE2B6FD029008BF784 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF1BED2B6FD028008BF784 /* Viewable.swift */; };
 		43D051B62B6D0345008E4E18 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051B52B6D0345008E4E18 /* CollectionModel.swift */; };
 		43D051B92B6D037E008E4E18 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051B82B6D037E008E4E18 /* HomeModel.swift */; };
 		43D051BB2B6D04A5008E4E18 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051BA2B6D04A5008E4E18 /* HomeViewModel.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		43AF1BE72B6FCA82008BF784 /* Listable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listable.swift; sourceTree = "<group>"; };
 		43AF1BE92B6FCAD5008BF784 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		43AF1BED2B6FD028008BF784 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		43D051B52B6D0345008E4E18 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		43D051B82B6D037E008E4E18 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		43D051BA2B6D04A5008E4E18 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				43EF31242B6C5723002414FC /* Nibbable.swift */,
 				43D051D42B6D2C1B008E4E18 /* Router.swift */,
 				43AF1BE92B6FCAD5008BF784 /* Searchable.swift */,
+				43AF1BED2B6FD028008BF784 /* Viewable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				43EF31322B6C5A08002414FC /* PokemonRepository.swift in Sources */,
 				43AF1BE82B6FCA82008BF784 /* Listable.swift in Sources */,
 				43EF311B2B6C50F6002414FC /* HomeAssembly.swift in Sources */,
+				43AF1BEE2B6FD029008BF784 /* Viewable.swift in Sources */,
 				43D051E52B6D9983008E4E18 /* NSDirectionalEdgeInsets+.swift in Sources */,
 				43D051D52B6D2C1B008E4E18 /* Router.swift in Sources */,
 				43EF31162B6C50CB002414FC /* HomeViewController.swift in Sources */,
