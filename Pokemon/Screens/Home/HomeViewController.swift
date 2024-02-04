@@ -60,12 +60,14 @@ extension HomeViewController: Viewable {
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.collectionViewLayout = createComponsitionalLayout()
         collectionView.keyboardDismissMode = .onDrag
+        collectionView.accessibilityIdentifier = "home_collectionView"
 
         collectionView.register(UINib(nibName: "PokemonCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: PokemonCollectionViewCell.reuseIdentifier)
 
         let search = UISearchController(searchResultsController: nil)
         search.delegate = self
         search.searchBar.delegate = self
+        search.searchBar.accessibilityIdentifier = "home_searchBar"
         navigationItem.searchController = search
     }
 
