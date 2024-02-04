@@ -12,9 +12,8 @@ protocol Nibbable {
 }
 
 extension Nibbable where Self: UIViewController {
-    /**
-     Instantiates a view controller from a nib with the same name
-     */
+    /// Instantiates a view controller from a nib with the same name
+    /// - Returns: Returns a View Controller
     static func instantiate() -> Self {
         let fullName = NSStringFromClass(self)
         let className = fullName.components(separatedBy: ".")[1]

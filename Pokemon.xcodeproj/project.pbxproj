@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43AF1BE82B6FCA82008BF784 /* Listable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF1BE72B6FCA82008BF784 /* Listable.swift */; };
+		43AF1BEA2B6FCAD5008BF784 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AF1BE92B6FCAD5008BF784 /* Searchable.swift */; };
 		43D051B62B6D0345008E4E18 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051B52B6D0345008E4E18 /* CollectionModel.swift */; };
 		43D051B92B6D037E008E4E18 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051B82B6D037E008E4E18 /* HomeModel.swift */; };
 		43D051BB2B6D04A5008E4E18 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D051BA2B6D04A5008E4E18 /* HomeViewModel.swift */; };
@@ -76,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43AF1BE72B6FCA82008BF784 /* Listable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listable.swift; sourceTree = "<group>"; };
+		43AF1BE92B6FCAD5008BF784 /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
 		43D051B52B6D0345008E4E18 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		43D051B82B6D037E008E4E18 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		43D051BA2B6D04A5008E4E18 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -156,6 +160,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43AF1BE62B6FCA74008BF784 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				43AF1BE72B6FCA82008BF784 /* Listable.swift */,
+				43EF31242B6C5723002414FC /* Nibbable.swift */,
+				43D051D42B6D2C1B008E4E18 /* Router.swift */,
+				43AF1BE92B6FCAD5008BF784 /* Searchable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		43D051B42B6D033B008E4E18 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,17 +246,18 @@
 		43EF30DC2B6C4FA5002414FC /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
-				43D051B42B6D033B008E4E18 /* Models */,
-				43EF31302B6C59F8002414FC /* Repositories */,
-				43EF31262B6C58A3002414FC /* Network */,
-				43EF311C2B6C5188002414FC /* Utilities */,
 				43EF31182B6C50DE002414FC /* DI */,
+				43D051B42B6D033B008E4E18 /* Models */,
+				43EF31262B6C58A3002414FC /* Network */,
+				43EF31302B6C59F8002414FC /* Repositories */,
 				43EF31132B6C50B9002414FC /* Screens */,
 				43EF30DD2B6C4FA5002414FC /* AppDelegate.swift */,
-				43EF30DF2B6C4FA5002414FC /* SceneDelegate.swift */,
 				43EF30E62B6C4FA6002414FC /* Assets.xcassets */,
-				43EF30E82B6C4FA6002414FC /* LaunchScreen.storyboard */,
 				43EF30EB2B6C4FA6002414FC /* Info.plist */,
+				43EF30E82B6C4FA6002414FC /* LaunchScreen.storyboard */,
+				43EF30DF2B6C4FA5002414FC /* SceneDelegate.swift */,
+				43AF1BE62B6FCA74008BF784 /* Common */,
+				43EF311C2B6C5188002414FC /* Utilities */,
 			);
 			path = Pokemon;
 			sourceTree = "<group>";
@@ -296,12 +312,10 @@
 		43EF311C2B6C5188002414FC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				43EF31242B6C5723002414FC /* Nibbable.swift */,
 				43EF311D2B6C51A0002414FC /* ScreenAssembler.swift */,
 				43EF31212B6C5215002414FC /* ScreenFactory.swift */,
 				43EF31272B6C58D3002414FC /* PrettyJSON.swift */,
 				43D051C62B6D209E008E4E18 /* UIImageView+Load.swift */,
-				43D051D42B6D2C1B008E4E18 /* Router.swift */,
 				43D051E42B6D9983008E4E18 /* NSDirectionalEdgeInsets+.swift */,
 			);
 			path = Utilities;
@@ -528,6 +542,7 @@
 				43D051B62B6D0345008E4E18 /* CollectionModel.swift in Sources */,
 				43D051CF2B6D2826008E4E18 /* PokemonDetailsModel.swift in Sources */,
 				43EF31322B6C5A08002414FC /* PokemonRepository.swift in Sources */,
+				43AF1BE82B6FCA82008BF784 /* Listable.swift in Sources */,
 				43EF311B2B6C50F6002414FC /* HomeAssembly.swift in Sources */,
 				43D051E52B6D9983008E4E18 /* NSDirectionalEdgeInsets+.swift in Sources */,
 				43D051D52B6D2C1B008E4E18 /* Router.swift in Sources */,
@@ -542,6 +557,7 @@
 				43EF30E02B6C4FA5002414FC /* SceneDelegate.swift in Sources */,
 				43EF31202B6C51EB002414FC /* FactoryAssemby.swift in Sources */,
 				43EF31222B6C5215002414FC /* ScreenFactory.swift in Sources */,
+				43AF1BEA2B6FCAD5008BF784 /* Searchable.swift in Sources */,
 				43D051D32B6D2BD5008E4E18 /* PokemonDetailsAssembly.swift in Sources */,
 				43D051BD2B6D04E3008E4E18 /* CollectionSection.swift in Sources */,
 				43D051C42B6D1C96008E4E18 /* PokemonCollectionViewCell.swift in Sources */,
