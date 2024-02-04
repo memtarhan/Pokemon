@@ -11,6 +11,9 @@ import UIKit
 
 class PokemonDetailsViewController: UIViewController, Nibbable {
     var viewModel: PokemonDetailsViewModel!
+
+    // MARK: Could also carry over actual Pokemon data here but for API call demonstration and better testing, I used pokemonId
+
     var pokemonId: Int?
 
     // MARK: - IBOutlets
@@ -22,6 +25,7 @@ class PokemonDetailsViewController: UIViewController, Nibbable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
         setupSubscribers()
 
         guard let pokemonId else {
@@ -31,6 +35,8 @@ class PokemonDetailsViewController: UIViewController, Nibbable {
 
         viewModel.load(pokemonId: pokemonId)
     }
+
+    // MARK: Those functions could be moved to a parent class for wide use
 
     func startLoading() {
         activityIndicator.startAnimating()
@@ -44,6 +50,10 @@ class PokemonDetailsViewController: UIViewController, Nibbable {
 // MARK: - Setup
 
 private extension PokemonDetailsViewController {
+    func setupUI() {
+        view.backgroundColor = .pokePrimaryBackground
+    }
+
     func setupSubscribers() {
         viewModel.detailsPublisher
             .receive(on: RunLoop.main)
@@ -58,11 +68,14 @@ private extension PokemonDetailsViewController {
 private extension PokemonDetailsViewController {
     func display(details: PokemonDetailsModel) {
         navigationItem.title = details.name
-        
+
         let detailsView = PokemonDetailsView(pokemon: details)
 
         let config = UIHostingConfiguration {
             detailsView
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+
+            // MARK: Can customise SwiftUI view here as well
         }
         let detailsUIView = config.makeContentView()
 

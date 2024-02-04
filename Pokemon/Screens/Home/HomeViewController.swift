@@ -51,7 +51,9 @@ class HomeViewController: UIViewController, Nibbable {
 
 private extension HomeViewController {
     func setupUI() {
-        title = "Pokemon"
+        view.backgroundColor = .pokePrimaryBackground
+        
+        navigationItem.title = "Pokemon"
 
         collectionView.dataSource = dataSource
         collectionView.delegate = self

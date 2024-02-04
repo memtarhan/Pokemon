@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-protocol HomeViewModel {
+protocol HomeViewModel: Listable, Searchable {
     /// Pokemon publisher with requested data
     var snapshotPublisher: AnyPublisher<pokemonListSnapshot, Never> { get }
 
@@ -17,21 +17,6 @@ protocol HomeViewModel {
 
     /// Loads a Pokemon
     func load()
-
-    /// Informs about last displayed item in Pokemon list
-    /// - Parameter indexPath: Index path of last displayed item
-    func willDisplayItem(atIndexPath indexPath: IndexPath)
-
-    /// Inform selection of an item
-    /// - Parameter indexPath: Index path of selected item
-    func didSelectItem(atIndexPath indexPath: IndexPath)
-
-    /// Cancels search
-    func cancelSearch()
-
-    /// Informs with searched keyword
-    /// - Parameter keyword: Searched keyword
-    func search(keyword: String)
 }
 
 class HomeViewModelImplemented: HomeViewModel {
@@ -80,11 +65,11 @@ class HomeViewModelImplemented: HomeViewModel {
     }
 
     func willDisplayItem(atIndexPath indexPath: IndexPath) {
-//        if indexPath.row == snapshotModel.itemIdentifiers(inSection: .main).count - 1 {
-//            // Load more
-//            currentId += 1
-//            load()
-//        }
+        if indexPath.row == snapshotModel.itemIdentifiers(inSection: .main).count - 1 {
+            // Load more
+            currentId += 1
+            load()
+        }
     }
 
     func didSelectItem(atIndexPath indexPath: IndexPath) {
@@ -92,11 +77,12 @@ class HomeViewModelImplemented: HomeViewModel {
             return
         }
 
-//        navigateToDetails.send(pokemon.id)
+        navigateToDetails.send(pokemon.id)
 
-        Task {
-            try? await favoriteRepository.favorite(pokemonWithId: pokemon.id)
-        }
+        // For testing favorites
+//        Task {
+//            try? await favoriteRepository.favorite(pokemonWithId: pokemon.id)
+//        }
     }
 
     func cancelSearch() {
