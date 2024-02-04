@@ -27,4 +27,5 @@ struct EndpointService {
     }
 }
 
+// MARK: Base urls should be fetched according to environment from a remote config or safe place
 fileprivate let baseURL = "https://pokeapi.co/api/v2"

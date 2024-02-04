@@ -17,6 +17,8 @@ class FavoritePokemonRepositoryImplemented: FavoritePokemonRepository {
         let request = FavoritePokemonRequest(id: id)
         let urlRequest = try request.createURLRequest(withURL: url)
 
+        // MARK: Token should be retrieved from a safe storage, Keychain or remote config
+
         let response: FavoritePokemonResponse = try await handleSecuredDataTask(securedSession(withToken: "testsk_6p8XKZAuac9xZv4fL0R7_1gji-CfpGnK.eu"), for: urlRequest)
         return response
     }

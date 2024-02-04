@@ -344,9 +344,9 @@
 		43EF31302B6C59F8002414FC /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				43D051E82B6DA566008E4E18 /* FavoritePokemonRepository.swift */,
 				43D051DC2B6D4E90008E4E18 /* PokemonDetailsRepository.swift */,
 				43EF31312B6C5A08002414FC /* PokemonRepository.swift */,
-				43D051E82B6DA566008E4E18 /* FavoritePokemonRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
