@@ -8,6 +8,8 @@
 @testable import Pokemon
 import XCTest
 
+// MARK: Those tests are for demonstration, Of course, there should be more and more tests
+
 final class FavoritePokemonRepositoryTests: XCTestCase {
     private var repository: FavoritePokemonRepository!
 

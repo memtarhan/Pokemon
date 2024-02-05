@@ -7,6 +7,8 @@
 
 import XCTest
 
+// MARK: Those tests are for demonstration, Of course, there should be more and more tests
+
 final class PokemonUITests: XCTestCase {
     var app: XCUIApplication!
 
