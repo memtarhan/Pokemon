@@ -67,7 +67,7 @@ extension HomeViewController: Viewable {
         let search = UISearchController(searchResultsController: nil)
         search.delegate = self
         search.searchBar.delegate = self
-        search.searchBar.accessibilityIdentifier = "home_searchBar"
+        search.searchBar.placeholder = "Search for a Pokemon"
         navigationItem.searchController = search
     }
 

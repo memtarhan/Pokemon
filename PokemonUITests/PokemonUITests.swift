@@ -36,7 +36,7 @@ final class PokemonUITests: XCTestCase {
     }
 
     func testHomeScreenSearch() throws {
-        let searchBar = app.otherElements["home_searchBar"]
+        let searchBar = app.searchFields["Search for a Pokemon"]
         XCTAssertTrue(searchBar.exists)
 
         searchBar.tap()
